@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After 10th - Career Options</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>
+        body {
+            background: #f8f9fa;
+            font-family: 'Helvetica', sans-serif;
+            text-align: center;
+            color: #343a40;
+            padding: 20px;
+        }
+        header {
+            background: #0077b6;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            background: #0096c7;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            background: #00b4d8;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .section {
+            background: white;
+            padding: 40px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .branch {
+            position: relative;
+            text-align: center;
+            margin: 20px auto;
+        }
+        .branch h3 {
+            background: #0077b6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 20px;
+            position: relative;
+        }
+        .sub-branches {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            position: relative;
+        }
+        .sub-branch {
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: #ffca3a;
+            color: white;
+            margin: 10px;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out, transform 0.3s;
+            position: relative;
+        }
+        .sub-branch:hover {
+            background: #ffac1c;
+            transform: scale(1.1);
+            z-index: 10; /* Add z-index to ensure hover element appears on top */
+        }
+        .sub-branch:hover::after {
+            content: attr(data-info);
+            position: absolute;
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            white-space: nowrap;
+            font-size: 14px;
+            z-index: 20; /* Higher z-index for tooltip to appear on top of everything */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background: #0077b6;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        /* Existing styles remain the same, adding responsive modifications */
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    nav ul li a {
+        display: inline-block;
+        padding: 10px 15px;
+    }
+
+    .container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .section {
+        padding: 25px;
+        margin: 15px 0;
+    }
+
+    .branch h3 {
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+
+    .sub-branches {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sub-branch {
+        margin: 8px;
+        padding: 10px 15px;
+    }
+}
+
+/* For mobile phones */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .branch h3 {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+
+    .sub-branches {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sub-branch {
+        width: 90%;
+        margin: 8px 0;
+        text-align: center;
+    }
+
+    .sub-branch:hover::after {
+        position: static;
+        display: block;
+        margin-top: 5px;
+        transform: none;
+        font-size: 12px;
+    }
+}
+
+/* For small mobile phones */
+@media screen and (max-width: 320px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    .branch h3 {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .sub-branch {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
+
+/* Ensure touch-friendly sizes for mobile */
+@media (max-width: 768px) {
+    .sub-branch {
+        min-height: 44px; /* Minimum touch target size */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Career Options After 10th</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="after10th.html">After 10th</a></li>
+                <li><a href="after12th.html">After 12th</a></li>
+                <li><a href="afterGraduation.html">After Graduation</a></li>
+                <li><a href="exams.html">Entrance Exams</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section class="section">
+            <h2>Available Career Paths</h2>
+            <div class="tree">
+                <div class="branch">
+                    <h3>Intermediate</h3>
+                    <div class="sub-branches">
+                        <div class="branch">
+                            <h2>Science</h2>
+                            <div class="sub-branch-braches">
+                                <div class="sub-branch" data-info="Mathematics, Physics, Chemistry - for Engineering and related fields">MPC</div>
+                                <div class="sub-branch" data-info="Biology, Physics, Chemistry - for Medical and related fields">BiPC</div>
+                                <div class="sub-branch" data-info="Study of library management and information science">Library Science</div>
+                            </div>
+                        </div>
+                            <div class="branch">
+                            <h2>Commerce</h2>
+                            <div class="sub-branch-branches">
+                                <div class="sub-branch" data-info="Civics, Economics, Commerce - for business and finance careers">CEC</div>
+                            </div>
+                        </div>
+                        <div class="branch">
+                            <h2>Arts</h2>
+                            <div class="sub-branch-branches">
+                                <div class="sub-branch" data-info="Mathematics, Economics, Commerce - for economic and financial studies">MEC</div>
+                                <div class="sub-branch" data-info="History, Economics, Civics - for social sciences and civil services">HEC</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="branch">
+                    <h3>Polytechnic</h3>
+                    <div class="sub-branches">
+                        <div class="sub-branch" data-info="Design, develop, and test mechanical devices">Mechanical</div>
+                        <div class="sub-branch" data-info="Software development, hardware, and networking">Computer Science</div>
+                        <div class="sub-branch" data-info="Design and construction of infrastructure">Civil</div>
+                        <div class="sub-branch" data-info="Electrical power systems and electronic devices">EEE</div>
+                        <div class="sub-branch" data-info="Information systems and database management">IT</div>
+                        <div class="sub-branch" data-info="Design, manufacture, and repair of vehicles">Automobile</div>
+                        <div class="sub-branch" data-info="Electronic circuits, communication systems">Electronics & Communication</div>
+                        <div class="sub-branch" data-info="Applications of biological systems and organisms">Bio-Technology</div>
+                        <div class="sub-branch" data-info="Generation, distribution, and utilization of electricity">Electrical</div>
+                        <div class="sub-branch" data-info="Chemical processes and production">Chemical</div>
+                        <div class="sub-branch" data-info="Design and development of aircraft">Aeronautical</div>
+                        <div class="sub-branch" data-info="Crop production, soil management, and farming techniques">Agriculture</div>
+                        <div class="sub-branch" data-info="Medical equipment and healthcare technology">Bio-Medical</div>
+                        <div class="sub-branch" data-info="Design, construction, and operation of marine vessels">Marine Technology</div>
+                        <div class="sub-branch" data-info="Extraction of minerals and resource management">Mining Technology</div>
+                        <div class="sub-branch" data-info="Processing and manufacturing of leather products">Leather Technology</div>
+                        <div class="sub-branch" data-info="Fabric manufacturing, dyeing, and printing">Textile Technology</div>
+                        <div class="sub-branch" data-info="Exploration, production, and refining of petroleum">Petroleum Technology</div>
+                        <div class="sub-branch" data-info="Manufacturing and processing of plastic materials">Plastic Technology</div>
+                        <div class="sub-branch" data-info="Production and processing of rubber products">Rubber Technology</div>
+                    </div>
+                </div>
+                <div class="branch">
+                    <h3>ITI</h3>
+                    <div class="sub-branches">
+                        <div class="sub-branch" data-info="Training in machine assembly and repairs">Fitter</div>
+                        <div class="sub-branch" data-info="Electrical wiring and circuit repair">Electrician</div>
+                        <div class="sub-branch" data-info="Metal fabrication and welding skills">Welder</div>
+                        <div class="sub-branch" data-info="Automobile and industrial machinery repair">Mechanic</div>
+                        <div class="sub-branch" data-info="Plumbing and sanitation system repair">Plumber</div>
+                        <div class="sub-branch" data-info="Drafting and design for civil engineering projects">Civil (Draughtman)</div>
+                        <div class="sub-branch" data-info="Machine operation and maintenance">Mechanical</div>
+                        <div class="sub-branch" data-info="Land measurement and mapping">Surveyor</div>
+                        <div class="sub-branch" data-info="Electrical systems installation and maintenance">Electrical</div>
+                        <div class="sub-branch" data-info="Operation of machine tools for metalworking">Machine Tools</div>
+                        <div class="sub-branch" data-info="Joining metal parts using welding techniques">Welder</div>
+                        <div class="sub-branch" data-info="Fire safety and emergency response">Firemen</div>
+                        <div class="sub-branch" data-info="Food preparation and culinary skills">Cookery</div>
+                        <div class="sub-branch" data-info="Application and technology of paints and coatings">Paint Technology</div>
+                    </div>
+                </div>
+                <div class="branch">
+                    <h3>Paramedical</h3>
+                    <div class="sub-branches">
+                        <div class="sub-branch" data-info="Diagnostic Laboratory Medical Technology - Perform tests on body fluids and tissues">DLMT</div>
+                        <div class="sub-branch" data-info="Diploma in Hospital Food Management - Manage dietary services in hospitals">DHFM</div>
+                        <div class="sub-branch" data-info="Diploma in Ophthalmic Assistant - Assist ophthalmologists in eye examinations and surgeries">DOA</div>
+                        <div class="sub-branch" data-info="Diploma in Operation Theatre Technology - Assist surgeons during operations">DOT</div>
+                        <div class="sub-branch" data-info="Inspect and ensure public health and sanitation standards">Health Inspector</div>
+                        <div class="sub-branch" data-info="Focuses on sanitation and hygiene practices to prevent disease">Sanitary Inspector</div>
+                    </div>
+                </div>
+                <div class="branch">
+                    <h3>Short-term Courses</h3>
+                    <div class="sub-branches">
+                        <div class="sub-branch" data-info="Desktop Publishing for print media design and layout">DTP</div>
+                        <div class="sub-branch" data-info="Accounting software for financial management and reporting">Tally</div>
+                        <div class="sub-branch" data-info="2D and 3D animation for media, gaming, and advertising">Animation</div>
+                        <div class="sub-branch" data-info="Website development and design skills for creating online platforms">Web Designing</div>
+                        <div class="sub-branch" data-info="Protection against cyber threats and hacking through security measures">Cyber Security</div>
+                        <div class="sub-branch" data-info="Post Graduate Diploma in Computer Applications, advanced computer skills">PGDCA</div>
+                        <div class="sub-branch" data-info="Basics of internet usage, web browsing, and online communication">Internet</div>
+                        <div class="sub-branch" data-info="Visual communication and design using digital tools and software">Graphics</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Career Guide | All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

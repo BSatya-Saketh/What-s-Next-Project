@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After 12th - Career Options</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: #f8f9fa;
+            font-family: 'Helvetica', sans-serif;
+            text-align: center;
+            color: #343a40;
+            padding: 10px;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: #0077b6;
+            color: white;
+            padding: 20px 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+        
+        header h1 {
+            font-size: 1.8rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        nav ul li {
+            margin: 5px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            background: #0096c7;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.3s;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        
+        nav ul li a:hover {
+            background: #00b4d8;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 10px;
+        }
+        
+        .section {
+            background: white;
+            padding: 20px 15px;
+            margin: 15px 0;
+            border-radius: 15px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .branch {
+            position: relative;
+            text-align: center;
+            margin: 15px auto;
+            width: 100%;
+        }
+        
+        .branch h3, .branch h2 {
+            background: #0077b6;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 1.2rem;
+            position: relative;
+            margin-bottom: 15px;
+            max-width: 90%;
+        }
+        
+        .sub-branches {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+            position: relative;
+            width: 100%;
+        }
+        
+        .sub-branch {
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: #ffca3a;
+            color: white;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out, transform 0.3s;
+            position: relative;
+            font-size: 0.9rem;
+        }
+        
+        .sub-branch:hover {
+            background: #ffac1c;
+            transform: scale(1.05);
+            z-index: 10;
+        }
+        
+        .sub-branch:hover::after {
+            content: attr(data-info);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 6px 8px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            z-index: 20;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            width: max-content;
+            max-width: 200px;
+            white-space: normal;
+        }
+        
+        footer {
+            background: #0077b6;
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 0.8rem;
+        }
+        
+        /* Media Queries for Responsive Design */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            nav ul li {
+                width: 100%;
+                margin: 2px 0;
+            }
+            
+            nav ul li a {
+                display: block;
+                width: 100%;
+            }
+            
+            .section {
+                padding: 15px 10px;
+            }
+            
+            .branch h3, .branch h2 {
+                font-size: 1rem;
+                padding: 8px;
+            }
+            
+            .sub-branch {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+            
+            header {
+                padding: 15px 10px;
+            }
+            
+            header h1 {
+                font-size: 1.2rem;
+            }
+            
+            .container {
+                padding: 5px;
+            }
+            
+            .section {
+                padding: 12px 8px;
+            }
+            
+            .sub-branches {
+                gap: 5px;
+            }
+            
+            .sub-branch:hover::after {
+                max-width: 150px;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Career Options After 12th</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="after10th.html">After 10th</a></li>
+                <li><a href="after12th.html">After 12th</a></li>
+                <li><a href="afterGraduation.html">After Graduation</a></li>
+                <li><a href="exams.html">Entrance Exams</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section class="section">
+            <h2>Available Career Paths</h2>
+            <div class="tree">
+                <div class="branch">
+                    <h3>Engineering (Eligible: MPC)</h3>
+                    <div class="sub-branches">
+                        <div class="sub-branch" data-info="Computer systems">CSE</div>
+                        <div class="sub-branch" data-info="Data management">IT</div>
+                        <div class="sub-branch" data-info="Electrical systems">ECE</div>
+                        <div class="sub-branch" data-info="Electricity, electronics">EEE</div>
+                        <div class="sub-branch" data-info="Built environment">Civil</div>
+                        <div class="sub-branch" data-info="Mechanical systems">Mechanical</div>
+                        <div class="sub-branch" data-info="Raw material conversion">Chemical</div>
+                        <div class="sub-branch" data-info="Aircraft design">Aeronautical</div>
+                        <div class="sub-branch" data-info="Aircraft, spacecraft">Aerospace</div>
+                        <div class="sub-branch" data-info="Farm technology">Agricultural</div>
+                        <div class="sub-branch" data-info="Vehicle design">Automobile</div>
+                        <div class="sub-branch" data-info="Medical devices">Bio-medical</div>
+                        <div class="sub-branch" data-info="Molecular biology">Bio-technology</div>
+                        <div class="sub-branch" data-info="Inorganic materials">Ceramic</div>
+                        <div class="sub-branch" data-info="Production processes">Industrial</div>
+                        <div class="sub-branch" data-info="Reducing pollution">Environmental</div>
+                        <div class="sub-branch" data-info="Ship systems">Marine</div>
+                        <div class="sub-branch" data-info="Mineral extraction">Mining</div>
+                        <div class="sub-branch" data-info="Silk production">Silk & Textile</div>
+                    </div>
+                </div>
+                <div class="branch">
+                    <h3>Medical (Eligible: BiPC)</h3>
+                    <div class="sub-branches">
+                       <div class="branch">
+                            <h2>Medicine</h2>
+                            <div class="sub-branches">
+                                <div class="sub-branch" data-info="Allopathic medicine">MBBS</div>
+                                <div class="sub-branch" data-info="Unani medicine">BUMS</div>
+                                <div class="sub-branch" data-info="Homeopathic medicine">BHMS</div>
+                                <div class="sub-branch" data-info="Ayurvedic medicine">BAMS</div>
+                                <div class="sub-branch" data-info="Naturopathic medicine">BNYS</div>
+                                <div class="sub-branch" data-info="Agricultural science">Ag.BSc</div>
+                                <div class="sub-branch" data-info="Dental surgery">BDS</div>
+                                <div class="sub-branch" data-info="Veterinary science">BVSc</div>
+                                <div class="sub-branch" data-info="Physiotherapy">BPT</div>
+                            </div>
+                            <h2>Allied Health Sciences</h2>
+                            <div class="sub-branches">
+                                <div class="sub-branch" data-info="Pharmaceutical science">B.Pharma</div>
+                                <div class="sub-branch" data-info="Nursing">BSc-Nursing</div>
+                                <div class="sub-branch" data-info="Occupational therapy">BOT</div>
+                                <div class="sub-branch" data-info="Anesthesia technology">BSc-Anesthesia Tec</div>
+                                <div class="sub-branch" data-info="Cardiac technology">BSc-Cardiac Tec</div>
+                                <div class="sub-branch" data-info="Medical lab technology">BSc-Medical lab Tec</div>
+                                <div class="sub-branch" data-info="Radio therapy technology">BSc-Radio Therapy Tec</div>
+                                <div class="sub-branch" data-info="Clinical optometry">BSc-Clinical Optometry</div>
+                                <div class="sub-branch" data-info="Nuclear medicine">BSc-Nuclear Medicine</div>
+                                <div class="sub-branch" data-info="Operation theatre technology">BSc-Operation Theatre</div>
+                                <div class="sub-branch" data-info="Physician assistant">BSc-Physician assistant</div>
+                                <div class="sub-branch" data-info="Respiratory care">BSc-Respiratory care</div>
+                            </div>
+                       </div> 
+                    </div>
+                </div>
+                <div class="branch">
+                    <h3>Degree</h3>
+                    <div class="sub-branches">
+                        <div class="sub-branch" data-info="Bachelor of Arts">BA</div>
+                        <div class="sub-branch" data-info="Bachelor of Science">BSc</div>
+                        <div class="sub-branch" data-info="Bachelor of Commerce">BCom</div>
+                        <div class="sub-branch" data-info="Bachelor of Laws">LLB</div>
+                        <div class="sub-branch" data-info="Bachelor of Business Administration">BBA</div>
+                    </div>
+                </div>
+                <div class="branch">
+                    <h3>Dual-Degree</h3>
+                    <div class="sub-branches">
+                        <div class="sub-branch" data-info="Bachelor of Arts and Bachelor of Education">BA + BEd</div>
+                        <div class="sub-branch" data-info="Bachelor of Science and Bachelor of Education">BSc + BEd</div>
+                        <div class="sub-branch" data-info="Bachelor of Arts and Bachelor of Laws">BA + LLB</div>
+                        <div class="sub-branch" data-info="Bachelor of Commerce and Bachelor of Laws">BCom + LLB</div>
+                        <div class="sub-branch" data-info="Bachelor of Business Management and Bachelor of Laws">BBM + LLB</div>
+                        <div class="sub-branch" data-info="Bachelor of Business Administration and Bachelor of Laws">BBA + LLB</div>
+                    </div>
+                </div>
+                <div class="branch">
+                    <h3>Professional Courses</h3>
+                    <div class="sub-branches">
+                        <div class="sub-branch" data-info="Cost and Works Accountants of India">ICWA</div>
+                        <div class="sub-branch" data-info="Company Secretary">CS</div>
+                        <div class="sub-branch" data-info="Chartered Accountant">CA</div>
+                    </div>
+                </div>
+                <div class="branch">
+                    <h3>NDA</h3>
+                    <div class="sub-branches">
+                        <div class="sub-branch" data-info="Indian Army">Army</div>
+                        <div class="sub-branch" data-info="Indian Navy">Navy</div>
+                        <div class="sub-branch" data-info="Indian Air Force">Air Force</div>
+                    </div>
+                </div>
+                <div class="branch">
+                    <h3>Teaching</h3>
+                    <div class="sub-branches">
+                        <div class="sub-branch" data-info="Diploma in Education">D.Ed</div>
+                        <div class="sub-branch" data-info="Under Graduate Physical Education Diploma">UDPED</div>
+                        <div class="sub-branch" data-info="Early Childhood Care and Education Diploma">ECCED</div>
+                    </div>
+                </div>
+                <div class="branch">
+                    <h3>Others</h3>
+                    <div class="sub-branches">
+                        <div class="sub-branch" data-info="News and media">Journalism</div>
+                        <div class="sub-branch" data-info="Visual communication">Designing</div>
+                        <div class="sub-branch" data-info="Movie production">Film Making</div>
+                        <div class="sub-branch" data-info="Business administration">Management</div>  
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Career Guide | All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
