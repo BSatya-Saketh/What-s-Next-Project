@@ -5,266 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>After Graduation - Career Options</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.png" type="image/png">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            background: #f8f9fa;
-            font-family: 'Helvetica', sans-serif;
-            text-align: center;
-            color: #343a40;
-            padding: 10px;
-            line-height: 1.6;
-        }
-        
-        header {
-            background: #0077b6;
-            color: white;
-            padding: 20px 15px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
-        }
-        
-        header h1 {
-            font-size: 1.8rem;
-        }
-        
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        nav ul li {
-            margin: 5px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            background: #0096c7;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: 0.3s;
-            display: inline-block;
-            font-size: 0.9rem;
-        }
-        
-        nav ul li a:hover {
-            background: #00b4d8;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1000px;
-            margin: auto;
-            padding: 10px;
-        }
-        
-        .section {
-            background: white;
-            padding: 20px 15px;
-            margin: 15px 0;
-            border-radius: 15px;
-            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .section h2 {
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-        
-        .tree {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-        
-        .branch {
-            position: relative;
-            text-align: center;
-            margin: 15px auto;
-            width: 100%;
-        }
-        
-        .branch h3 {
-            background: #0077b6;
-            color: white;
-            padding: 10px;
-            border-radius: 8px;
-            display: inline-block;
-            font-size: 1.2rem;
-            position: relative;
-            margin-bottom: 15px;
-            max-width: 90%;
-        }
-        
-        .branch h4 {
-            background: #0096c7;
-            color: white;
-            padding: 8px;
-            border-radius: 6px;
-            display: inline-block;
-            font-size: 1.1rem;
-            position: relative;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            max-width: 90%;
-        }
-        
-        .sub-branches {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-            position: relative;
-            width: 100%;
-        }
-        
-        .sub-branch {
-            padding: 8px 12px;
-            border-radius: 8px;
-            background: #ffca3a;
-            color: white;
-            font-weight: bold;
-            transition: background 0.3s ease-in-out, transform 0.3s;
-            position: relative;
-            font-size: 0.9rem;
-        }
-        
-        .sub-branch:hover {
-            background: #ffac1c;
-            transform: scale(1.05);
-            z-index: 10;
-        }
-        
-        .sub-branch:hover::after {
-            content: attr(data-info);
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 6px 8px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            z-index: 20;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            width: max-content;
-            max-width: 200px;
-            white-space: normal;
-        }
-        
-        footer {
-            background: #0077b6;
-            color: white;
-            padding: 12px;
-            border-radius: 10px;
-            margin-top: 20px;
-            font-size: 0.8rem;
-        }
-        
-        /* Handle nested branches better */
-        .branch .branch {
-            margin: 10px auto;
-            width: 100%;
-        }
-        
-        /* Media Queries for Responsive Design */
-        @media screen and (max-width: 768px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 5px;
-            }
-            
-            nav ul li {
-                width: 100%;
-                margin: 2px 0;
-            }
-            
-            nav ul li a {
-                display: block;
-                width: 100%;
-            }
-            
-            .section {
-                padding: 15px 10px;
-            }
-            
-            .branch h3 {
-                font-size: 1rem;
-                padding: 8px;
-            }
-            
-            .branch h4 {
-                font-size: 0.9rem;
-                padding: 6px;
-            }
-            
-            .sub-branch {
-                font-size: 0.8rem;
-                padding: 6px 10px;
-            }
-        }
-        
-        @media screen and (max-width: 480px) {
-            body {
-                padding: 5px;
-            }
-            
-            header {
-                padding: 15px 10px;
-            }
-            
-            header h1 {
-                font-size: 1.2rem;
-            }
-            
-            .container {
-                padding: 5px;
-            }
-            
-            .section {
-                padding: 12px 8px;
-            }
-            
-            .sub-branches {
-                gap: 5px;
-            }
-            
-            .sub-branch:hover::after {
-                max-width: 150px;
-                font-size: 0.7rem;
-            }
-            
-            /* Better handling of nested branches on very small screens */
-            .branch .branch {
-                margin: 8px auto;
-            }
-        }
-    </style>
+    <link rel="icon" href="favicon.jpg" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Career Options After Graduation</h1>
+            <p>Explore advanced education and professional pathways for graduates</p>
         </div>
     </header>
     
@@ -274,7 +22,8 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="after10th.html">After 10th</a></li>
                 <li><a href="after12th.html">After 12th</a></li>
-                <li><a href="afterGraduation.html">After Graduation</a></li>
+                <li><a href="graduation.html">Graduation</a></li>
+                <li><a href="afterGraduation.html" class="active">After Graduation</a></li>
                 <li><a href="exams.html">Entrance Exams</a></li>
             </ul>
         </div>
@@ -282,84 +31,88 @@
     
     <main class="container">
         <section class="section">
+            <h2>Your Next Steps After Graduation</h2>
+            <p>Completing your undergraduate degree opens doors to specialized career paths, advanced academic pursuits, and professional development opportunities. The choices you make at this stage can significantly impact your long-term career trajectory and earning potential.</p>
+            
+            <p>Whether you're considering further education, entering the job market, or pursuing entrepreneurship, it's important to evaluate options that align with your academic background, career goals, and personal interests. Below are the major pathways available after graduation, organized by degree type.</p>
+        </section>
+        
+        <section class="section">
             <h2>Available Career Paths</h2>
             <div class="tree">
-                <div class="branch">
-                    <h3>Engineering Students</h3>
-                    <div class="sub-branches">
-                        <div class="sub-branch" data-info="Master of Technology">M.Tech</div>
-                        <div class="sub-branch" data-info="Master of Business Administration">MBA</div>
-                        <div class="sub-branch">JOB</div>
-                    </div>
-                </div>
-                <div class="branch">
-                    <h3>Medical Students</h3>
-                    <div class="sub-branches">
-                        <div class="sub-branch" data-info="Medical Practice">Practice</div>
-                        <div class="sub-branch" data-info="Master of Surgery">MS</div>
-                        <div class="sub-branch" data-info="Doctor of Medicine">MD</div>
-                        <div class="sub-branch">JOB</div>
-                    </div>
-                </div>
                 <div class="branch">
                     <h3>Degree Students</h3>
                     <div class="sub-branches">
                         <div class="branch">
-                            <h4>BA Students</h4>
+                            <h2>BA Students</h2>
                             <div class="sub-branches">
-                                <div class="sub-branch" data-info="Master of Arts">MA</div>
-                                <div class="sub-branch" data-info="Bachelor of Education">B.Ed</div>
-                                <div class="sub-branch" data-info="Master of Business Administration">MBA</div>
-                                <div class="sub-branch" data-info="Bachelor of Laws">LLB</div>
-                                <div class="sub-branch" data-info="Doctor of Philosophy">PhD</div>
-                                <div class="sub-branch">JOB</div>
+                                <div class="sub-branch" data-info="Master of Arts - 2-year advanced degree in humanities and social sciences. Specializations include Literature, History, Economics, Psychology, Sociology, Political Science, and more. Deepens subject knowledge and research skills. Average starting salary: ₹3-6 lakhs per annum.">MA</div>
+                                <div class="sub-branch" data-info="Bachelor of Education - 1-2 year professional degree for teaching qualification. Essential for teaching positions in schools. Combines educational theory with teaching practice. Average starting salary: ₹3-5 lakhs per annum.">B.Ed</div>
+                                <div class="sub-branch" data-info="Master of Business Administration - 2-year management degree with specializations in Marketing, Finance, HR, Operations, etc. Highly valued in corporate settings. Average starting salary: ₹6-12 lakhs per annum.">MBA</div>
+                                <div class="sub-branch" data-info="Master of Social Work - 2-year professional degree in social welfare and community development. Prepares for careers in NGOs, government agencies, and community organizations. Average starting salary: ₹3-5 lakhs per annum.">MSW</div>
+                                <div class="sub-branch" data-info="Doctor of Philosophy - Research-focused advanced degree taking 3-5 years. Involves original research contribution to the field. Leads to academic and research careers. Average starting salary: ₹4-8 lakhs per annum.">PhD</div>
+                                <div class="sub-branch" data-info="Professional employment in various sectors including education, media, publishing, government, NGOs, and corporate communications. Entry-level positions with growth potential based on skills and experience. Average starting salary: ₹2.5-5 lakhs per annum.">JOB</div>
+                                <div class="sub-branch" data-info="Civil Services Examination - Highly competitive exam for prestigious government positions. Includes IAS, IPS, IFS, and other central services. Requires extensive preparation. Average starting salary: ₹6-12 lakhs per annum with additional benefits.">UPSC</div>
+                                <div class="sub-branch" data-info="Post Graduate Diploma in Management - 1-2 year management program similar to MBA but shorter duration. Offered by prestigious institutions with good placement records. Average starting salary: ₹5-10 lakhs per annum.">PGDM</div>
                             </div>
                         </div>
                         <div class="branch">
-                            <h4>B.Sc Students</h4>
+                            <h2>B.Sc Students</h2>
                             <div class="sub-branches">
-                                <div class="sub-branch" data-info="Master of Science">MSc</div>
-                                <div class="sub-branch" data-info="Bachelor of Education">B.Ed</div>
-                                <div class="sub-branch" data-info="Bachelor of Laws">LLB</div>
-                                <div class="sub-branch" data-info="Doctor of Philosophy">PhD</div>
-                                <div class="sub-branch">JOB</div>
+                                <div class="sub-branch" data-info="Master of Science - 2-year advanced degree in scientific disciplines. Specializations include Physics, Chemistry, Biology, Mathematics, Computer Science, etc. Deepens subject knowledge and research skills. Average starting salary: ₹3.5-7 lakhs per annum.">MSc</div>
+                                <div class="sub-branch" data-info="Bachelor of Education - 1-2 year professional degree for teaching qualification. Essential for teaching positions in schools. Combines educational theory with teaching practice. Average starting salary: ₹3-5 lakhs per annum.">B.Ed</div>
+                                <div class="sub-branch" data-info="Master of Business Administration - 2-year management degree with specializations in Marketing, Finance, HR, Operations, etc. Highly valued in corporate settings. Average starting salary: ₹6-12 lakhs per annum.">MBA</div>
+                                <div class="sub-branch" data-info="Master of Computer Applications - 2-year professional degree in computer applications and software development. Alternative to MSc Computer Science with more applied focus. Average starting salary: ₹4-8 lakhs per annum.">MCA</div>
+                                <div class="sub-branch" data-info="Doctor of Philosophy - Research-focused advanced degree taking 3-5 years. Involves original research contribution to the field. Leads to academic and research careers. Average starting salary: ₹4-8 lakhs per annum.">PhD</div>
+                                <div class="sub-branch" data-info="Professional employment in various sectors including IT, research laboratories, pharmaceutical companies, healthcare, and education. Entry-level positions with growth potential based on skills and experience. Average starting salary: ₹3-6 lakhs per annum.">JOB</div>
+                                <div class="sub-branch" data-info="Master of Technology - 2-year advanced engineering degree. Available for B.Sc graduates in certain disciplines through lateral entry. Specializations depend on undergraduate background. Average starting salary: ₹5-10 lakhs per annum.">M.Tech</div>
+                                <div class="sub-branch" data-info="Data Science and Analytics programs - Specialized courses in data analysis, machine learning, and business intelligence. High demand in current job market across industries. Average starting salary: ₹5-10 lakhs per annum.">Data Science</div>
                             </div>
                         </div>
                         <div class="branch">
-                            <h4>B.Com Students</h4>
+                            <h2>B.Com Students</h2>
                             <div class="sub-branches">
-                                <div class="sub-branch" data-info="Master of Commerce">M.Com</div>
-                                <div class="sub-branch" data-info="Master of Business Administration">MBA</div>
-                                <div class="sub-branch" data-info="Bachelor of Laws">LLB</div>
-                                <div class="sub-branch" data-info="Doctor of Philosophy">PhD</div>
-                                <div class="sub-branch">JOB</div>
+                                <div class="sub-branch" data-info="Master of Commerce - 2-year advanced degree in commerce and business studies. Specializations include Accounting, Finance, Banking, Taxation, and more. Deepens subject knowledge and research skills. Average starting salary: ₹3.5-6 lakhs per annum.">M.Com</div>
+                                <div class="sub-branch" data-info="Master of Business Administration - 2-year management degree with specializations in Marketing, Finance, HR, Operations, etc. Highly valued in corporate settings. Average starting salary: ₹6-12 lakhs per annum.">MBA</div>
+                                <div class="sub-branch" data-info="Chartered Accountant - Premier accounting qualification requiring 3 levels of exams and 3 years of practical training. Comprehensive expertise in auditing, taxation, financial reporting, and corporate finance. Average starting salary: ₹6-12 lakhs per annum.">CA</div>
+                                <div class="sub-branch" data-info="Company Secretary - Professional qualification in corporate governance and compliance. Requires foundation, executive, and professional level exams with practical training. Average starting salary: ₹5-9 lakhs per annum.">CS</div>
+                                <div class="sub-branch" data-info="Cost and Management Accountant - Specialization in cost accounting and management. Requires foundation, intermediate, and final level exams with practical training. Average starting salary: ₹5-9 lakhs per annum.">CMA</div>
+                                <div class="sub-branch" data-info="Doctor of Philosophy - Research-focused advanced degree taking 3-5 years. Involves original research contribution to the field. Leads to academic and research careers. Average starting salary: ₹4-8 lakhs per annum.">PhD</div>
+                                <div class="sub-branch" data-info="Professional employment in various sectors including banking, finance, accounting, insurance, and corporate management. Entry-level positions with growth potential based on skills and experience. Average starting salary: ₹3-6 lakhs per annum.">JOB</div>
+                                <div class="sub-branch" data-info="Certified Financial Analyst - Globally recognized qualification in investment management. Requires passing three levels of exams. Highly valued in investment banking and portfolio management. Average starting salary: ₹6-12 lakhs per annum.">CFA</div>
                             </div>
                         </div>
                         <div class="branch">
-                            <h4>LLB Students</h4>
+                            <h2>LLB Students</h2>
                             <div class="sub-branches">
-                                <div class="sub-branch" data-info="Diploma in Taxation Law">DTL</div>
-                                <div class="sub-branch" data-info="Diploma in Labour Laws">DLL</div>
-                                <div class="sub-branch" data-info="Master of Laws">LLM</div>
-                                <div class="sub-branch">JOB</div>
+                                <div class="sub-branch" data-info="Master of Laws - 1-2 year advanced degree in legal studies. Specializations include Constitutional Law, Corporate Law, Criminal Law, International Law, Intellectual Property Law, and more. Average starting salary: ₹4-8 lakhs per annum.">LLM</div>
+                                <div class="sub-branch" data-info="Master of Business Administration - 2-year management degree with specializations in Marketing, Finance, HR, Operations, etc. Particularly valuable combined with legal background for corporate legal roles. Average starting salary: ₹6-12 lakhs per annum.">MBA</div>
+                                <div class="sub-branch" data-info="Doctor of Philosophy in Law - Research-focused advanced degree taking 3-5 years. Involves original research contribution to legal scholarship. Leads to academic and research careers. Average starting salary: ₹4-8 lakhs per annum.">PhD</div>
+                                <div class="sub-branch" data-info="Professional legal practice as an advocate in courts, legal firms, or as independent practitioner. Requires bar council registration. Income varies widely based on specialization and experience. Average starting salary: ₹3-7 lakhs per annum.">JOB</div>
+                                <div class="sub-branch" data-info="Judicial Services Examination - Competitive exam for appointment as judicial officers/judges in district courts. Prestigious government position with significant responsibility. Average starting salary: ₹6-10 lakhs per annum with additional benefits.">Judicial Services</div>
+                                <div class="sub-branch" data-info="Civil Services Examination - Highly competitive exam for prestigious government positions. Legal background particularly valuable for certain services. Requires extensive preparation. Average starting salary: ₹6-12 lakhs per annum with additional benefits.">UPSC</div>
                             </div>
                         </div>
                         <div class="branch">
-                            <h4>BCA Students</h4>
+                            <h2>BCA Students</h2>
                             <div class="sub-branches">
-                                <div class="sub-branch" data-info="Master of Computer Applications">MCA</div>
-                                <div class="sub-branch" data-info="Master of Business Administration">MBA</div>
-                                <div class="sub-branch" data-info="Master of Science in Computer Science">MSc.Comp</div>
-                                <div class="sub-branch" data-info="Doctor of Philosophy">PhD</div>
-                                <div class="sub-branch">JOB</div>
+                                <div class="sub-branch" data-info="Master of Computer Applications - 2-year professional degree in computer applications and software development. Natural progression from BCA with advanced programming and system design. Average starting salary: ₹4-8 lakhs per annum.">MCA</div>
+                                <div class="sub-branch" data-info="Master of Science in Computer Science - 2-year advanced degree focusing on theoretical and applied aspects of computer science. More research-oriented than MCA. Average starting salary: ₹4-8 lakhs per annum.">MSc CS</div>
+                                <div class="sub-branch" data-info="Master of Business Administration - 2-year management degree with specializations in IT Management, Systems Management, or other business areas. Combines technical knowledge with management skills. Average starting salary: ₹6-12 lakhs per annum.">MBA</div>
+                                <div class="sub-branch" data-info="Doctor of Philosophy - Research-focused advanced degree taking 3-5 years. Involves original research contribution to computer science or related fields. Leads to academic and research careers. Average starting salary: ₹4-8 lakhs per annum.">PhD</div>
+                                <div class="sub-branch" data-info="Professional employment in IT sector as software developer, web developer, system analyst, database administrator, or IT support specialist. Entry-level positions with growth potential based on skills and experience. Average starting salary: ₹3-7 lakhs per annum.">JOB</div>
+                                <div class="sub-branch" data-info="Master of Technology in Computer Science - 2-year advanced engineering degree. Available for BCA graduates through lateral entry in some universities. More technical and specialized than MCA. Average starting salary: ₹5-10 lakhs per annum.">M.Tech</div>
                             </div>
                         </div>
                         <div class="branch">
-                            <h4>BBA/BBM Students</h4>
+                            <h2>BBA/BBM Students</h2>
                             <div class="sub-branches">
-                                <div class="sub-branch" data-info="Master of Business Administration">MBA</div>
-                                <div class="sub-branch" data-info="Doctor of Philosophy">PhD</div>
-                                <div class="sub-branch">JOB</div>
+                                <div class="sub-branch" data-info="Master of Business Administration - 2-year management degree with specializations in Marketing, Finance, HR, Operations, etc. Natural progression from BBA/BBM with advanced business concepts and management training. Average starting salary: ₹6-12 lakhs per annum.">MBA</div>
+                                <div class="sub-branch" data-info="Master of Management Studies - 2-year management program similar to MBA but with different structure in some universities. Focuses on practical management skills and industry exposure. Average starting salary: ₹5-10 lakhs per annum.">MMS</div>
+                                <div class="sub-branch" data-info="Post Graduate Diploma in Management - 1-2 year management program similar to MBA but shorter duration. Offered by prestigious institutions with good placement records. Average starting salary: ₹5-10 lakhs per annum.">PGDM</div>
+                                <div class="sub-branch" data-info="Doctor of Philosophy in Management - Research-focused advanced degree taking 3-5 years. Involves original research contribution to management theory or practice. Leads to academic and research careers. Average starting salary: ₹4-8 lakhs per annum.">PhD</div>
+                                <div class="sub-branch" data-info="Professional employment in various sectors including marketing, sales, human resources, operations, finance, and general management. Entry-level positions with growth potential based on skills and experience. Average starting salary: ₹3-7 lakhs per annum.">JOB</div>
+                                <div class="sub-branch" data-info="Chartered Financial Analyst - Globally recognized qualification in investment management. Requires passing three levels of exams. Highly valued in investment banking and portfolio management. Average starting salary: ₹6-12 lakhs per annum.">CFA</div>
                             </div>
                         </div>
                     </div>
@@ -367,13 +120,58 @@
                 <div class="branch">
                     <h3>Teaching Students</h3>
                     <div class="sub-branches">
-                        <div class="sub-branch" data-info="Bachelor of Education / Bachelor of Physical Education">B.Ed / B.PEd</div>
-                        <div class="sub-branch" data-info="Master of Education">M.Ed</div>
-                        <div class="sub-branch" data-info="Doctor of Philosophy">PhD</div>
-                        <div class="sub-branch">JOB</div>
+                        <div class="branch">
+                            <h2>B.Ed/B.PEd Students</h2>
+                            <div class="sub-branches">
+                                <div class="sub-branch" data-info="Master of Education - 2-year advanced degree in education theory and practice. Specializations include Educational Psychology, Curriculum Development, Educational Technology, and more. Deepens understanding of educational processes and research. Average starting salary: ₹4-7 lakhs per annum.">M.Ed</div>
+                                <div class="sub-branch" data-info="Doctor of Philosophy in Education - Research-focused advanced degree taking 3-5 years. Involves original research contribution to educational theory or practice. Leads to academic leadership and research careers. Average starting salary: ₹4-8 lakhs per annum.">PhD</div>
+                                <div class="sub-branch" data-info="Professional employment as teacher in schools (primary, secondary, or senior secondary levels). B.Ed qualifies for subject teaching while B.PEd qualifies for physical education teaching. Government and private school opportunities available. Average starting salary: ₹3-6 lakhs per annum.">JOB</div>
+                                <div class="sub-branch" data-info="Master of Arts in specific subject - 2-year advanced degree to deepen subject knowledge alongside teaching qualification. Enhances career prospects in specialized teaching roles. Average starting salary: ₹3.5-6 lakhs per annum.">MA</div>
+                                <div class="sub-branch" data-info="Master of Science in specific subject - 2-year advanced degree to deepen subject knowledge alongside teaching qualification. Enhances career prospects in specialized teaching roles, particularly for science subjects. Average starting salary: ₹3.5-6 lakhs per annum.">MSc</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+        
+        <section class="section">
+            <h2>Making Your Post-Graduation Decision</h2>
+            <p>When planning your career after graduation, consider these important factors:</p>
+            
+            <div class="decision-factors">
+                <div class="factor">
+                    <h4>Career Goals</h4>
+                    <p>Identify long-term career objectives and required qualifications.</p>
+                </div>
+                
+                <div class="factor">
+                    <h4>Industry Trends</h4>
+                    <p>Research growing sectors and emerging opportunities in your field.</p>
+                </div>
+                
+                <div class="factor">
+                    <h4>Skill Development</h4>
+                    <p>Assess which additional skills would enhance your employability.</p>
+                </div>
+                
+                <div class="factor">
+                    <h4>Return on Investment</h4>
+                    <p>Evaluate the cost of further education against potential salary increases.</p>
+                </div>
+                
+                <div class="factor">
+                    <h4>Work Experience</h4>
+                    <p>Consider whether immediate work experience might be more valuable than further study.</p>
+                </div>
+                
+                <div class="factor">
+                    <h4>Personal Circumstances</h4>
+                    <p>Factor in financial situation, location preferences, and personal commitments.</p>
+                </div>
+            </div>
+            
+            <p>Remember that professional development is a continuous journey. Many successful professionals combine work experience with part-time or distance learning programs to advance their careers. Stay adaptable and open to new opportunities as industries and job markets evolve.</p>
         </section>
     </main>
     
