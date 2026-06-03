@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f0f9ff;
+  --text-primary: #343a40;
+  --text-secondary: #495057;
+  --text-white: #ffffff;
+  --accent-primary: #0077b6;
+  --accent-secondary: #0096c7;
+  --accent-tertiary: #00b4d8;
+  --accent-dark: #023e8a;
+  --accent-yellow: #ffca3a;
+  --accent-yellow-hover: #ffac1c;
+  --border-color: #e0e0e0;
+  --table-row-even: #f2f2f2;
+  --table-row-hover: #e9f5ff;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --shadow-dark: rgba(0, 0, 0, 0.2);
+}
+
+.dark {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-tertiary: #1f2a48;
+  --text-primary: #e8e8e8;
+  --text-secondary: #c4c4c4;
+  --text-white: #ffffff;
+  --accent-primary: #4a90d9;
+  --accent-secondary: #5ba3e8;
+  --accent-tertiary: #7cb8f0;
+  --accent-dark: #2d5a8a;
+  --accent-yellow: #ffca3a;
+  --accent-yellow-hover: #ffac1c;
+  --border-color: #2a3a5c;
+  --table-row-even: #1f2a48;
+  --table-row-hover: #2a3a5c;
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(0, 0, 0, 0.4);
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
